@@ -1,22 +1,19 @@
 // import _ from 'lodash';
-import {aprendiendo} from './app.js';
-import './style.css';
-import './style.scss';
-import './message-three.js';
-import './message-two.js'
+import { routes } from "./routes.js";
 
- function component() {
-   const element = document.createElement('div');
+let route = routes.find(
+  (item) => window.location.pathname == item.path
+);
 
-  // Lodash, currently included via a script, is required for this line to work
-  // Lodash, now imported by this script
-  //  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+console.log(route)
 
-   return element;
- }
+route = route ? route : routes.find(
+      (item) => window.location.pathname == `/${item.name}.html`
+    );
 
- document.body.appendChild(component());
-
- console.log("dentro del script mobile de webpack en Bogota");
-
- aprendiendo();
+console.log(route)
+// console.log('route', route)
+// require("./partials/generalPage.js").page();
+if (route) {
+  require("./components/" + route.component + ".js");
+}
