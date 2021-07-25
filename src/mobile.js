@@ -1,5 +1,6 @@
 // import _ from 'lodash';
-import {aprendiendo} from './app.js';
+import { learning } from './app.js';
+// let learn = require('./app').aprendiendo;
 import './style.css';
 import './style.scss';
 import './message-three.js';
@@ -15,8 +16,10 @@ import './message-two.js'
    return element;
  }
 
- document.body.appendChild(component());
+document.body.appendChild(component());
 
- console.log("dentro del script mobile de webpack en Bogota");
+console.log("I'm at mobil.js file");
 
- aprendiendo();
+// To execute imported functions 
+learning();
+// learn();

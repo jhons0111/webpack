@@ -33,6 +33,14 @@ module.exports = (env) => {
     module: {
         rules: [
           {
+            test: /\.(png|jpe?g|gif)$/i,
+            use: [
+              {
+                loader: 'file-loader',
+              },
+            ],
+          },
+          {
             test: /\.m?js$/,
             exclude: /(node_modules)/,
             use: {
